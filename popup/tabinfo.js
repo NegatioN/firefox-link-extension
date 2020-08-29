@@ -3,18 +3,13 @@ function setPageInfo() {
         let pageurl = document.getElementById('pageurl');
         let serverurl = document.getElementById('serverurl');
         pageurl.value = tabs[0].url;
-        browser.storage.local.get('server').then(item => {
-            serverurl.value = item.server.value;
+        browser.storage.local.get('host').then(item => {
+            serverurl.value = item.host || 'localhost:8080';
         })
     })
 }
 
 document.addEventListener("DOMContentLoaded", setPageInfo);
-
-document.getElementById('serverurl').addEventListener('change', function (evt) {
-    let server = {name: 'server', value: this.value}
-    browser.storage.local.set({server}).then(res => console.log("Updated server value"))
-});
 
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));

@@ -18,7 +18,7 @@
   "options_ui": {
     "page": "options.html"
   },
-  
+
   "browser_specific_settings": {
     "gecko": {
       "id": "linkaddon@email.com"

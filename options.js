@@ -9,9 +9,8 @@ function saveOptions(e) {
 
 
 function restoreOptions() {
-
     function setCurrentChoice(result) {
-        document.querySelector("#host").value = result.host || "localhost:8080";
+        document.querySelector("#host").value = result.host || "http://localhost:8080";
     }
 
     function onError(error) {

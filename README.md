@@ -10,3 +10,4 @@ tab url to a server url of your choice.
 4. make it easier to find the options to set the server? Possibly in right click menu?
 5. Make popup look smoother
 6. Execute a post request to selected URL with content.
+7. Allow config of HTTP vs HTTPS somewhere? (without manual prefix)

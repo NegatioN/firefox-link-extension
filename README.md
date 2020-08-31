@@ -11,3 +11,5 @@ tab url to a server url of your choice.
 5. Make popup look smoother
 6. Execute a post request to selected URL with content.
 7. Allow config of HTTP vs HTTPS somewhere? (without manual prefix)
+8. Configure settings for how many values to send in POST, and which types of data to send?
+9. Add attribution of icon: https://www.iconfinder.com/iconsets/seo-internet-marketing-flat-icons

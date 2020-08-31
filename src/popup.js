@@ -18,11 +18,13 @@ function sleep (time) {
 document.getElementById("send").addEventListener("click", (e) => {
     let serverurl = document.getElementById('serverurl');
     let pageurl = document.getElementById('pageurl');
+    let artist = document.getElementById('artist');
+    let song = document.getElementById('song');
 
     let url = encodeURI(serverurl.value);
-    let sendData = {value: pageurl.value}
+    let sendData = {url: pageurl.value, artist: artist.value, song: song.value}
 
-
+    pageurl.value = "-- Executing --";
     fetch(url, {
         method: "post",
         headers: {'Content-Type': 'application/json'},

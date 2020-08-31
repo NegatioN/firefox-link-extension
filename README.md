@@ -13,3 +13,4 @@ tab url to a server url of your choice.
 6. Execute a post request to selected URL with content.
 7. Allow config of HTTP vs HTTPS somewhere? (without manual prefix)
 8. Configure settings for how many values to send in POST, and which types of data to send?
+* some sort of add-field button in config?

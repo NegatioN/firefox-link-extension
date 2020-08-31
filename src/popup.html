@@ -2,16 +2,24 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 
 <html>
 <body>
-<div>
-    <input type="text" id="serverurl">
-    <label for="pageurl">Page URL</label><br>
-    <input type="text" id="pageurl">
+
+<div class="settings">
+    <label>Server</label>
+    <input type="text" id="serverurl" />
+    <label>URL</label>
+    <input type="text" id="pageurl" />
+    <label>Artist</label>
+    <input type="text" id="artist" />
+    <label>Song</label>
+    <input type="text" id="song" />
+    <span></span>
     <button id="send">Send URL</button>
 </div>
-<script src="tabinfo.js"></script>
+<script src="popup.js"></script>
 </body>
 </html>

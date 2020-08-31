@@ -1,7 +1,7 @@
 {
 
   "manifest_version": 2,
-  "name": "link-extension",
+  "name": "PostCurrentPage",
   "version": "1.0",
 
   "description": "Sends your current tab url to a preconfigured server",
@@ -28,7 +28,7 @@
   "browser_action": {
     "browser_style": true,
     "default_icon": "icons/icon_48.png",
-    "default_title": "link-extension",
+    "default_title": "PostCurrentPage",
     "default_popup": "src/popup.html"
   }
 

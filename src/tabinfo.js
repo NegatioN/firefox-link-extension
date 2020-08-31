@@ -34,6 +34,9 @@ document.getElementById("send").addEventListener("click", (e) => {
                 pageurl.value = "Fail";
             }
         })
+        .catch(err => {
+            pageurl.value = "Request failed";
+        })
         .then(r => {
             sleep(1500).then(rr => window.close());
         });

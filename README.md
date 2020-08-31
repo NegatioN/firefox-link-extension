@@ -1,10 +1,16 @@
 # firefox-link-extension
 
-A simple extension which executes a get request with the currently selected
+A simple extension which executes a POST request with the currently selected
 tab url to a server url of your choice.
 
 ## Package
 `zip extension.zip icons/icon_48.png icons/icon_96.png src/* manifest.json`
+
+## Installation
+### Firefox: 
+1. Go to `about:config`-page, and set `xpinstall.signatures.required` to `true`
+2. Drag `extension.zip` into the `about:addons`-page
+
 
 ### TODO
 2. Animate success/Failure of request by adding some sort of icon afterwards.______

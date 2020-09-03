@@ -4,6 +4,7 @@ import asyncio
 from aiohttp import web
 import aiohttp_cors
 from youtube_dl import YoutubeDL
+from eyed3.id3.tag import Tag
 
 ydl_opts = {
     'format': 'bestaudio/best',
@@ -37,18 +38,27 @@ args = parser.parse_args()
 
 routes = web.RouteTableDef()
 
+def add_mp3_metadata(filepath, data):
+    tag = Tag()
+    tag.parse(filepath + '.mp3')
+    tag.artist = data['artist']
+    tag.album_artist = data['artist']
+    tag.title = data['song']
+    tag.album = data['song']   # TODO fix this? Plex doesnt respect non-album inputs.
+
+    tag.save()
 
 @routes.post('/')
 async def download_song(request):
     body = await request.json()
     link = body['url']
-    artist_song = " - ".join([body['artist'], body['song']])
     opts = ydl_opts.copy()
-    print(f'Downloading {link}')
-    file_path = os.path.join(args.path, f'{artist_song}.%(ext)s')
-    opts['outtmpl'] = file_path
+    file_path = os.path.join(args.path, body['artist'], body['song'], body['song'])
+    opts['outtmpl'] = file_path + '.%(ext)s'
     with YoutubeDL(opts) as y:
         y.download([link])
+
+    add_mp3_metadata(file_path, body)
 
     return web.json_response('OK')
 
